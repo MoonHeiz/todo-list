@@ -14,25 +14,27 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/style/style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
 
   <body>
-    <header class="header">
+    <!-- HEADER -->
+    <header>
       <div class="container">
         <div class="header__inner">
           <h2 class="header__logo"><a href="#">TO DO LIST</a></h2>
-          <div class="header__menu">
+          <form class="header__menu" name="headerMenu">
             <input
               class="header__input-task"
               type="text"
               placeholder="Enter your task"
             />
-            <button class="header__submit">ADD</button>
-          </div>
+            <button class="header__submit" type="submit">ADD</button>
+          </form>
         </div>
       </div>
     </header>
+    <!-- MAIN -->
     <main>
       <div class="container">
         <div class="break-line">
@@ -43,6 +45,6 @@
         </ul>
       </div>
     </main>
-    <script src="./assets/scripts/script.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
