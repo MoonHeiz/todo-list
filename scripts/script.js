@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', refreshTasks);
 
 const taskArray = JSON.parse(localStorage.getItem('tasks')) || [];
-const submitButton = document.querySelector('.header__submit');
+const submitButton = document.querySelector('.todo-form__submit');
 const todoList = document.querySelector('.todo-list');
 
 function createTask() {
-  const taskName = document.querySelector('.header__input-task').value;
+  const taskName = document.querySelector('.todo-form__input-task').value;
 
   if (!taskName) return;
 
@@ -27,7 +27,7 @@ function refreshTasks() {
       }" data-item="${i}">
       <span class="todo-list__status"></span>
       <p class="todo-list__name">${task.name}</p>
-      <a class="todo-remove">x</a>
+      <button class="todo-remove">x</button>
     </li>
     `;
     })
@@ -36,7 +36,8 @@ function refreshTasks() {
 
 function taskHandler(e) {
   const target = e.target;
-  if (target.matches('a')) {
+
+  if (target.matches('button')) {
     const index = target.parentNode.dataset.item;
     taskArray.splice(index, 1);
   } else {
